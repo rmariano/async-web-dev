@@ -1,5 +1,4 @@
 from twisted.internet import protocol, reactor
-#from twisted.protocols import basic
 
 
 class GreetProtocol(protocol.Protocol):
