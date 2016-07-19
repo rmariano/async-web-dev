@@ -9,7 +9,8 @@ class Greeting(Resource):
     def delayed(self, request):
         query = request.args.get(b'q', [""])[0]
 
-        request.write(b"Hello " + query + b"\n")
+        reply_txt = "Hello {0!s}\n".format(str(query)).encode('utf-8')
+        request.write(reply_txt)
         request.finish()
 
     def render_GET(self, request):
